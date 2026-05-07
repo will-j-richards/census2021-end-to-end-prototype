@@ -1,0 +1,63 @@
+---
+title: COVID-19 test (round 6 - pandemic situation revised - no furlough) Household questionnaire (English)
+project: Census 2021 End to end prototype
+globalcss: false
+layout: eq-default-extras
+assetPrefixUrl: https://sdc-global-design-patterns.netlify.com
+noONSLogoLink: true
+---
+
+<link rel="stylesheet" href="../style.css"/>
+<div class="page__subheader">
+    <div class="container">
+        <a class="back-link js-previous-link" href="../hub">Back</a>
+    </div>
+</div>
+
+<div class="page__container container">
+    <div class="grid grid--reverse">
+        <div class="grid__col col-4@m"></div>
+        <div class="grid__col col-8@m">
+            <main role="main" id="main" class="page__main u-mt-m@m">
+                <div class="group">
+                    <div class="block">
+                        <section class="section">
+                            <h1 class="question__title u-fs-xl">Coronavirus (COVID-19)</h1>
+                            <p>
+                                Circumstances for <strong class="js-person-name"></strong> may have changed during the coronavirus pandemic.
+                                Answer all questions based on the situation as it is now.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+
+                <button class="btn btn--primary btn--lg qa-btn-submit btn-submit u-mt-m"
+                        type="submit" name="">Continue
+                </button>
+            </main>
+        </div>
+    </div>
+</div>
+
+<script src='/js/compiled/end-to-end/bundle.js'></script>
+
+<script>
+  var storageAPI = window.ONS.storage,
+    urlParams = new URLSearchParams(window.location.search),
+    personId = urlParams.get('person_id');
+
+  function updateName() {
+    var personDetails = storageAPI.getHouseholdMemberByPersonId(personId);
+    if (personDetails && personDetails['@person'] && personDetails['@person'].fullName) {
+      $('.js-person-name').html(personDetails['@person'].fullName);
+    }
+  }
+
+  $('.btn-submit').click(function(e) {
+    e.preventDefault();
+    window.location = '../individual-intro/?person_id=' + personId;
+    storageAPI.storePageData('/end-to-end/individual-intro/', window.location.pathname);
+  });
+
+  $(updateName);
+</script>

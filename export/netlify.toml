@@ -1,0 +1,4 @@
+# export/ is a byte-for-byte mirror of _site/ after Jekyll build (same as ./scripts/update-export.sh locally).
+[build]
+  publish = "export"
+  command = "bash scripts/update-export.sh"

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Version 1</title>
+  <meta name="description" content="">
+
+  
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+
+  
+    <link rel="stylesheet" href="https://cdn.ons.gov.uk/sdc/v1.0.0/css/responsive.css">
+  
+
+  <link rel="canonical" href="http://localhost:4000//end-to-end/relationships-summary-proxy/">
+  <link rel="alternate" type="application/rss+xml" title="eQ Prototypes" href="http://localhost:4000//feed.xml">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:300,400,600,700,900'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.0/underscore-min.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("touchstart", function(){}, true);
+  </script>
+  <script>var cl = document.querySelector('html').classList;
+ cl.remove('no-js'); cl.add('has-js');</script>
+</head>
+
+  <body>
+    <div class="page">
+      <div class="page__content">
+        <div class="skip">
+          <a class="skip__link" href="#main">Skip to content</a>
+        </div>
+        <script src='/js/compiled/end-to-end/bundle.js'></script>
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search),
+      surveyType = urlParams.get('survey'),
+      urlSuffix = surveyType ? '?survey=' + surveyType : '';
+
+    $(function () {
+      window.location.href = '../hub/' + urlSuffix;
+      storageAPI.storePageData('/end-to-end/hub/', window.location.pathname);
+
+    });
+</script>
+
+      </div>
+      <footer class="page__footer">
+  <div class="footer page__footer" role="contentinfo">
+    <div class="container">
+      <div class="pluto">© <a class="footer__link" href="https://www.ons.gov.uk/" target="_blank">Office for National Statistics 2016</a></div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <!-- Uncomment for Loop 11 <script type="text/javascript">
+      var loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8";
+      var l11_clientOptions = {"cookieDomain":".github.io"};
+      document.write(unescape("%3cscript src='//cdn.loop11.com/my/loop11.js' type='text/javascript'%3e%3c/script%3e"));
+    </script> -->
+  </body>
+</html>

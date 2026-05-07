@@ -1,0 +1,5 @@
+# Site settings
+# Local dev should serve at the root path (/) so asset URLs like `/css/main.css`
+# resolve correctly without needing a reverse-proxy subpath.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://localhost:4000/"

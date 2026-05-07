@@ -1,0 +1,26 @@
+{% assign all_categories = site.prototypes | map: "project" | uniq %}
+
+<nav class="prototype-list">
+
+  <ul>
+
+  {% assign _home = page.url | default: "" | strip %}
+  {% unless _home == "/" or _home == "/index.html" %}
+    <li><strong>Shortcuts</strong></li>
+    <li><a href="/eq-prototypes/index.html">Prototypes Home</a></li>
+  {% endunless %}
+
+  {% for cat in all_categories %}
+    {% if cat == "" %}{% continue %}{% endif %}
+
+    <li><strong>{{cat}}</strong></li>
+    {% for prototype in site.prototypes %}
+      {% if prototype.path contains 'index.html' and prototype.project == cat %}
+      <li><a href="{{ prototype.url | prepend: site.baseurl }}">{{ prototype.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+  {% endfor %}
+
+  </ul>
+</nav>

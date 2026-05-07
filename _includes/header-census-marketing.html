@@ -1,0 +1,66 @@
+{% assign ee_home = site.baseurl | append: '/end-to-end/home/' %}
+<div class="header__top">
+    <div class="container">
+        <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+            <div class="grid__col col-auto">
+                <a class="header__logo-link" href="{{ site.baseurl }}/">
+                    <picture>
+                        <source media="(max-width: 499px)" srcset="https://cdn.ons.gov.uk/sdc/design-system/28.0.1/img/ons-logo-stacked-pos-en.svg">
+                        <img class="header__logo" src="https://cdn.ons.gov.uk/sdc/design-system/28.0.1/img/ons-logo-pos-en.svg" alt="Office for National Statistics logo">
+                    </picture>
+                </a>
+            </div>
+            <div class="header__links grid__col col-auto">
+                <div class="grid__col col-auto">
+                    <ul class="language-links">
+                        <li class="language-links__item">
+                            <a href="#0" lang="cy" data-ga-element="language">Cymraeg</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header__main ">
+    <div class="container">
+        <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+            <div class="grid__col col-auto u-flex-shrink">
+                <a class="header__title-link" href="{{ ee_home }}">
+                    <h1 class="header__title header__title--nav-adj">
+                        <span class="js-header-title">Census Household questionnaire (English)</span>
+                    </h1>
+                    <img class="header__title-logo" src="{{ '/img/icons/census-logo-en.svg' | prepend: site.baseurl }}" alt="Census 2021">
+                </a>
+            </div>
+            <div class="grid__col col-auto u-flex-no-shrink u-d-no@m">
+                <button type="submit" class="btn btn--mobile u-ml-s js-toggle-main" aria-label="Toggle main navigation" aria-controls="main-nav" aria-haspopup="true" aria-expanded="false">
+                    <span class="btn__inner">Menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header__bottom">
+    <div class="container container--gutterless@xs@m">
+        <nav class="header-nav js-header-nav" id="main-nav" aria-label="Main menu" data-analytics="header-navigation">
+            <ul class="header-nav__list" aria-label="" role="menubar">
+                <li class="header-nav__item ">
+                    <a href="{{ ee_home }}" class="header-nav__link" role="menuitem">Home</a>
+                </li>
+                <li class="header-nav__item ">
+                    <a href="https://deploy-preview-118--sdc-prototypes.netlify.app/prototypes/census-website-respond/about-the-census/" class="header-nav__link" role="menuitem">About the census</a>
+                </li>
+                <li class="header-nav__item ">
+                    <a href="https://deploy-preview-118--sdc-prototypes.netlify.app/prototypes/census-website-respond/your-data-and-security/" class="header-nav__link" role="menuitem">Your data and security</a>
+                </li>
+                <li class="header-nav__item ">
+                    <a href="https://deploy-preview-118--sdc-prototypes.netlify.app/prototypes/census-website-respond/help/" class="header-nav__link" role="menuitem">Help</a>
+                </li>
+                <li class="header-nav__item ">
+                    <a href="https://deploy-preview-118--sdc-prototypes.netlify.app/prototypes/census-website-respond/contact-us/" class="header-nav__link" role="menuitem">Contact us</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

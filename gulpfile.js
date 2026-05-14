@@ -4,7 +4,8 @@ const browserSync = require('browser-sync').create();
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const gutil = require('gulp-util');
-const sass = require('gulp-sass');
+const dartSass = require('sass');
+const sass = require('gulp-sass')(dartSass);
 const sassGlob = require('gulp-sass-glob');
 const postcss = require('gulp-postcss');
 const flatten = require('gulp-flatten');
@@ -76,16 +77,12 @@ gulp.task('css:build', () => {
     .pipe(sassGlob())
     .pipe(
       sass({
-        errLogToConsole: true,
-        outputStyle: 'expanded',
-        sourceComments: false,
-        includePaths: [
+        style: 'expanded',
+        quietDeps: true,
+        loadPaths: [
           './node_modules/eq-sass/',
           './node_modules/gfm.css/source/'
-        ],
-        onSuccess: function(msg) {
-          gutil.log('Done', gutil.colors.cyan(msg));
-        }
+        ]
       })
     )
     .pipe(flatten())

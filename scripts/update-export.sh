@@ -36,6 +36,12 @@ for arg in "$@"; do
   esac
 done
 
+# Same as local `npm start`: populate gitignored paths so Jekyll copies them into _site/ → export/.
+if [[ -x "${ROOT}/scripts/sync-static-assets.sh" ]]; then
+  echo "==> Static assets (js/compiled, s/img from export + _img)"
+  "${ROOT}/scripts/sync-static-assets.sh"
+fi
+
 OUT="$ROOT/export"
 URL_FILE="$ROOT/export-urls.txt"
 

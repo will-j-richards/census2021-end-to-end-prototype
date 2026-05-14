@@ -6,3 +6,5 @@ gem 'liquid-inheritance'
 # Ruby 2.6 compatibility: newer connection_pool requires Ruby >= 3.2.
 gem 'connection_pool', '< 3'
 gem 'webrick', '~> 1.8'
+# Ruby 3.4+: csv is no longer a default bundled gem; Jekyll 3.x still requires it (e.g. Netlify/mise Ruby 3.4).
+gem 'csv'

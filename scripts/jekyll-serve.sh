@@ -4,6 +4,11 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
+# Populate gitignored paths (js/compiled, s/img) from committed sources — no separate Gulp step.
+if [[ -x "${ROOT}/scripts/sync-static-assets.sh" ]]; then
+  "${ROOT}/scripts/sync-static-assets.sh"
+fi
+
 PORT="${PORT:-8080}"
 HOST="${HOST:-127.0.0.1}"
 

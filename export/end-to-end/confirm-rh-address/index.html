@@ -188,6 +188,11 @@
     var addressCountry = sessionStorage.getItem('address-country');
     var addressType = sessionStorage.getItem('address-type');
 
+    // Fulfilment journeys: warm does not show Exit here.
+    if (currentJourney === 'new-hh-uac' || currentJourney === 'new-ir-uac') {
+        $('.exit').hide();
+    }
+
 	$('.qa-btn-submit').on('click', function (e) {
         e.preventDefault();
 

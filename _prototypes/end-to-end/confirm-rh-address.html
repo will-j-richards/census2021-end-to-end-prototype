@@ -90,6 +90,11 @@ logoUrl: ../home
     var fulfilmentJourney = (currentJourney === 'new-hh-uac' || currentJourney === 'new-ir-uac' || currentJourney === 'new-hh-paper' || currentJourney === 'continuation-form');
     var WLHBookmark = sessionStorage.getItem('wlh_bookmark');
 
+    // Fulfilment journeys: warm does not show Exit here.
+    if (currentJourney === 'new-hh-uac' || currentJourney === 'new-ir-uac') {
+        $('.exit').hide();
+    }
+
 	$('.qa-btn-submit').on('click', function (e) {
         e.preventDefault();
 

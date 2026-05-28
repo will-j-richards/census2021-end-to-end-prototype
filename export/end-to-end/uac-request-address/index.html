@@ -140,6 +140,7 @@
                   data-qa="question-title">
                   What is your address?
               </h1>
+              <p class="question__description js-question-description"><span class="js-question-description-piping"></span></p>
               <fieldset class="question__fieldset js-question-fieldset">
                 <legend class="u-vh">What is your address?</legend>
                 <div class="question">
@@ -252,6 +253,11 @@
     $('.js-previous-link').hide();
   }
 
+  // Fulfilment journeys: warm does not show Exit here.
+  if (currentJourney === 'new-ir-uac' || currentJourney === 'new-hh-uac') {
+    $('.exit').hide();
+  }
+
   if (window.location.search == '?edit=true') {
     function updateEditableAddress() {
       $('#rh-proto-address').val(sessionStorage.getItem('address'));
@@ -266,8 +272,11 @@
   });
 
   function updateHelp() {
-    if (currentJourney === 'new-ir-uac') {
+    // Individual UAC journey (arrives via ir-uac-request-launcher)
+    if (currentJourney === 'new-ir-uac' || previousPage === 'ir-uac-request-launcher') {
       $('.js-question-description-piping').html('To request an individual access code, we need your address');
+    } else if (currentJourney === 'new-hh-uac') {
+      $('.js-question-description-piping').html('To request an access code, we need your address');
     } else if (currentJourney === 'new-hh-paper') {
       $('.js-question-description-piping').html('To send a paper questionnaire, we need your address');
     }
